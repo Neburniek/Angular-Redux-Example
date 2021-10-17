@@ -3,14 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DaughterComponent } from './counter/daughter/daughter.component';
+import { GranddaughterComponent } from './counter/granddaughter/granddaughter.component';
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './counter/counter.reducer';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DaughterComponent,
+    GranddaughterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot({ counter: counterReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]
